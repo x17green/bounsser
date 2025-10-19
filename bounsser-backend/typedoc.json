@@ -1,0 +1,34 @@
+{
+  "entryPoints": ["src"],
+  "entryPointStrategy": "expand",
+  "out": "docs/api",
+  "name": "Bouncer Backend API Documentation",
+  "includeVersion": true,
+  "readme": "README.md",
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/tests/**"
+  ],
+  "excludeExternals": true,
+  "excludePrivate": false,
+  "excludeProtected": false,
+  "categorizeByGroup": true,
+  "sort": ["source-order"],
+  "validation": {
+    "notExported": false,
+    "invalidLink": false,
+    "notDocumented": false
+  },
+  "treatWarningsAsErrors": false,
+  "cleanOutputDir": true,
+  "searchInComments": true,
+  "titleLink": "https://github.com/x17green/bouncer-backend",
+  "navigationLinks": {
+    "GitHub": "https://github.com/x17green/bouncer-backend"
+  }
+}
