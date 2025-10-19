@@ -1,0 +1,84 @@
+{
+  "name": "bounsser-monorepo",
+  "version": "1.0.0",
+  "description": "Bounsser - Hybrid impersonation-detection bot for X (Twitter)",
+  "private": true,
+  "workspaces": [
+    "bounsser-backend",
+    "bounsser-frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=bounsser-backend",
+    "dev:frontend": "npm run dev --workspace=bounsser-frontend",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "npm run build --workspace=bounsser-backend",
+    "build:frontend": "npm run build --workspace=bounsser-frontend",
+    "start": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "npm run start --workspace=bounsser-backend",
+    "start:frontend": "npm run start --workspace=bounsser-frontend",
+    "test": "npm run test --workspace=bounsser-backend",
+    "test:backend": "npm run test --workspace=bounsser-backend",
+    "test:frontend": "npm run test --workspace=bounsser-frontend",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "npm run lint --workspace=bounsser-backend",
+    "lint:frontend": "npm run lint --workspace=bounsser-frontend",
+    "lint:fix": "npm run lint:fix:backend && npm run lint:fix:frontend",
+    "lint:fix:backend": "npm run lint:fix --workspace=bounsser-backend",
+    "lint:fix:frontend": "npm run lint:fix --workspace=bounsser-frontend",
+    "format": "npm run format:backend && npm run format:frontend",
+    "format:backend": "npm run format --workspace=bounsser-backend",
+    "format:frontend": "npm run format --workspace=bounsser-frontend",
+    "typecheck": "npm run typecheck:backend && npm run typecheck:frontend",
+    "typecheck:backend": "npm run typecheck --workspace=bounsser-backend",
+    "typecheck:frontend": "npm run typecheck --workspace=bounsser-frontend",
+    "db:generate": "npm run db:generate --workspace=bounsser-backend",
+    "db:push": "npm run db:push --workspace=bounsser-backend",
+    "db:migrate": "npm run db:migrate --workspace=bounsser-backend",
+    "db:studio": "npm run db:studio --workspace=bounsser-backend",
+    "db:seed": "npm run db:seed --workspace=bounsser-backend",
+    "db:reset": "npm run db:reset --workspace=bounsser-backend",
+    "docker:up": "docker-compose -f bounsser-backend/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f bounsser-backend/docker-compose.yml down",
+    "docker:logs": "docker-compose -f bounsser-backend/docker-compose.yml logs -f",
+    "docs:generate": "npm run docs:generate --workspace=bounsser-backend",
+    "docs:serve": "npm run docs:serve --workspace=bounsser-backend",
+    "install:all": "npm install && npm install --workspace=bounsser-backend && npm install --workspace=bounsser-frontend",
+    "clean": "npm run clean:backend && npm run clean:frontend",
+    "clean:backend": "cd bounsser-backend && rm -rf dist coverage .nyc_output",
+    "clean:frontend": "cd bounsser-frontend && rm -rf .next out dist",
+    "setup": "node scripts/setup.js",
+    "env:copy": "cp .env.example .env.local",
+    "env:validate": "node scripts/validate-env.js",
+    "postinstall": "npm run db:generate"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "twitter",
+    "impersonation",
+    "detection",
+    "bot",
+    "security",
+    "monorepo",
+    "typescript",
+    "nodejs",
+    "nextjs"
+  ],
+  "author": "Bounsser's Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x17green/bounsser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/x17green/bounsser/issues"
+  },
+  "homepage": "https://github.com/x17green/bounsser#readme"
+}
