@@ -1,0 +1,61 @@
+# Exclude backend from frontend deployment
+bounsser-backend/
+
+# Exclude root-level files not needed for frontend
+scripts/
+docs/
+*.md
+!bounsser-frontend/README.md
+
+# Exclude development files
+.env
+.env.local
+.env.development
+.env.test
+
+# Exclude logs and temp files
+logs/
+*.log
+.DS_Store
+Thumbs.db
+
+# Exclude package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Exclude node_modules (handled by Vercel)
+node_modules/
+
+# Exclude build artifacts
+dist/
+build/
+.next/
+out/
+
+# Exclude test files
+*.test.*
+*.spec.*
+__tests__/
+coverage/
+
+# Exclude Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Exclude git files
+.git/
+.gitignore
+
+# Exclude IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Exclude database files
+*.db
+*.sqlite
+*.sqlite3
+prisma/migrations/

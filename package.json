@@ -17,6 +17,7 @@
     "start": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "npm run start --workspace=bounsser-backend",
     "start:frontend": "npm run start --workspace=bounsser-frontend",
+    "build:frontend-only": "npm run build --workspace=bounsser-frontend",
     "test": "npm run test --workspace=bounsser-backend",
     "test:backend": "npm run test --workspace=bounsser-backend",
     "test:frontend": "npm run test --workspace=bounsser-frontend",
@@ -50,7 +51,8 @@
     "setup": "node scripts/setup.js",
     "env:copy": "cp .env.example .env.local",
     "env:validate": "node scripts/validate-env.js",
-    "postinstall": "npm run db:generate"
+    "prepare:build": "npm run db:generate --workspace=bounsser-backend || true",
+    "vercel-build": "npm run build:frontend-only"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",

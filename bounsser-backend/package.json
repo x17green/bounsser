@@ -1,5 +1,5 @@
 {
-  "name": "bouncer-backend",
+  "name": "bounsser-backend",
   "version": "1.0.0",
   "description": "Hybrid impersonation-detection bot for X (Twitter) - Backend API",
   "main": "dist/core/server.js",
