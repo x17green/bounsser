@@ -139,8 +139,8 @@ const isTest: boolean = nodeEnv === "test";
 
 // API configuration with defaults
 const apiConfig: ApiConfig = {
-  baseUrl: getEnv("NEXT_PUBLIC_API_BASE_URL", "http://localhost:3000/api/v1"),
-  appUrl: getEnv("NEXT_PUBLIC_APP_URL", "http://localhost:3001"),
+  baseUrl: getEnv("NEXT_PUBLIC_API_BASE_URL", "http://localhost:5000/api/v1"),
+  appUrl: getEnv("NEXT_PUBLIC_APP_URL", "http://localhost:3000"),
   version: getEnv("API_VERSION", "v1"),
 };
 
