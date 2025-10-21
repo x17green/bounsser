@@ -44,7 +44,7 @@
     "docs:dev": "npm run docs:generate && npm run docs:serve",
     "docs:clean": "rm -rf docs/api",
     "docs:build-and-serve": "npm run docs:generate && npm run docs:serve",
-    "swagger:serve": "node -e \"console.log(\"🔍 Swagger UI available at: http://localhost:3000/api-docs\"); console.log(\"Start the development server with: npm run dev\")\""
+    "swagger:serve": "node -e \"console.log(\"🔍 Swagger UI available at: http://localhost:5000/api-docs\"); console.log(\"Start the development server with: npm run dev\")\""
   },
   "keywords": [
     "twitter",
