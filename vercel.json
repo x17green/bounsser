@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "bounsser-frontend/.next",
   "installCommand": "npm run install:all",
   "devCommand": "npm run dev",
   "framework": "nextjs"
